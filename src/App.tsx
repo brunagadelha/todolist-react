@@ -84,15 +84,15 @@ export default function App() {
                             </div>
                             :
                             tasks.map(task =>
-                                <div key={task.text} className={styles.listItem}>
-                                    <button className={task.done ? styles.listItemChecked : styles.listItemUnchecked} onClick={() => handleCheckTask(task.text)}>
+                                <div key={task.text} className={`${styles.listItem} ${task.done && styles.listItemChecked}`}>
+                                    <button className={styles.listItemPrimaryAction} onClick={() => handleCheckTask(task.text)}>
                                         {task.done
-                                            ? <CheckCircle size={17.45}  weight="fill"/>
-                                            : <Circle size={17.45} />
+                                            ? <CheckCircle weight="fill"/>
+                                            : <Circle />
                                         }
                                     </button>
-                                    <span className={task.done ? styles.listItemTextLine : styles.listItemText}>{task.text}</span>
-                                    <button onClick={() => handleDeleteTask(task.text)}>
+                                    <span className={styles.listItemText}>{task.text}</span>
+                                    <button className={styles.listItemSecondaryAction} onClick={() => handleDeleteTask(task.text)}>
                                         <Trash />
                                     </button>
                                 </div>

@@ -117,29 +117,52 @@
 }
 
 
-.listItemUnchecked {
+.listItemPrimaryAction {
     background: transparent;
     border: 0;
     color: var(--blue);
     cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    
 }
 
-.listItemUnchecked:hover {
+.listItemPrimaryAction:hover {
     color: var(--blue-dark)
 }
 
-.listItemChecked {
-    background: transparent;
-    border: 0;
-    color: var(--purple-dark);
-    cursor: pointer;
+.listItemPrimaryAction svg {
+    width: 100%;
+    height: 100%;
 }
 
-.listItemChecked:hover {
+.listItemSecondaryAction {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listItemSecondaryAction:hover{
+    background: var(--gray-400);
+    color: var(--danger);
+    border-radius: 4px;
+}
+
+.listItemChecked .listItemPrimaryAction {
+    color: var(--purple-dark);
+}
+
+.listItemChecked .listItemPrimaryAction:hover {
     color: var(--purple);
 }
 
-.listItemTextLine {
+.listItemChecked .listItemText {
     flex: 1;
     color: var(--gray-300);
     text-decoration: line-through;
